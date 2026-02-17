@@ -1,0 +1,31 @@
+ALGORITHM Sentence
+VAR
+    i: INTEGER
+    words, vowel, caracters: INTEGER
+    sentence: STRING
+BEGIN
+    Read(sentence) // this is to read the sentence
+    words:=1; // for word count
+    vowel:= 0; // for vowel count
+    caracters:=0; // for caracters count
+
+    i:=0; // this is for the loop
+
+    WHILE (sentence[i]<>'.') DO // while we haven't reached the end of the sentence
+        caracters := caracters + 1;// for caracters count
+
+        IF (sentence[i]='a' OR sentence[i]='A' OR sentence[i]='e' OR sentence[i]='E' OR sentence[i]='i' 
+            OR sentence[i]='I' OR sentence[i]='o' OR sentence[i]='O' OR sentence[i]='u' OR sentence[i]='U' ) THEN vowel:=vowel+1;
+        END_IF
+
+        // for for word count
+        IF (sentence[i]=' ')THEN words++;
+        END_IF
+
+        i:= i+1;
+
+    END_WHILE
+    Write(caracters)
+    Write(words)
+    Write(vowel)
+END
